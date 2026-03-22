@@ -5,58 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAFAR ENGLAND</title>
 
+    <!-- 🔥 FACEBOOK PIXEL CODE -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];
+        t=b.createElement(e);t.async=!0;
+        t.src=v;
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)
+        }(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '889492616762612'); 
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=889492616762612&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- 🔥 END PIXEL -->
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         body { font-family: Arial, sans-serif; }
+
+        .fade-in {
+            animation: fade 1s ease-in-out;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-gray-100">
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200">
 
-    <div class="bg-white p-6 rounded-2xl shadow-md w-full max-w-sm text-center">
+    <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-sm text-center fade-in">
 
-        <!-- Title -->
-        <h1 class="text-xl font-bold text-gray-900 mb-2">
-            JAFAR ENGLAND
+        <h1 class="text-2xl font-bold text-gray-900 mb-2">
+            🚀 JAFAR ENGLAND
         </h1>
 
-        <!-- Info -->
         <p class="text-gray-600 text-sm mb-4">
-            You will be redirected to Telegram channel shortly...
+            Connecting you to our private Telegram channel...
         </p>
 
-        <!-- Countdown -->
         <p class="text-blue-600 font-bold text-lg mb-4">
             Redirecting in <span id="count">10</span> sec ⏳
         </p>
 
-        <!-- Button -->
         <a href="https://t.me/+_eLoideHi_g2ZmY1"
-           class="block bg-blue-500 text-white py-3 rounded-lg font-semibold">
+           onclick="trackJoin()"
+           class="block bg-blue-500 hover:bg-blue-600 transition text-white py-3 rounded-lg font-semibold shadow-md">
            Join Now
         </a>
 
-        <!-- Footer -->
         <p class="text-xs text-gray-400 mt-4">
-            Secure redirection • No spam
+            🔒 Safe & Secure • No Spam
         </p>
 
     </div>
 
     <script>
         let time = 10;
-        let count = document.getElementById("count");
+        const count = document.getElementById("count");
 
-        let timer = setInterval(() => {
+        const timer = setInterval(() => {
             time--;
             count.innerText = time;
 
-            if(time <= 0){
+            if (time <= 0) {
                 clearInterval(timer);
-                window.location.href = "https://t.me/+_eLoideHi_g2ZmY1";
+                fbq('track', 'Lead'); // 🔥 conversion tracking
+                window.location.replace("https://t.me/+_eLoideHi_g2ZmY1");
             }
         }, 1000);
+
+        function trackJoin(){
+            fbq('track', 'Lead'); // 🔥 button click tracking
+        }
     </script>
 
 </body>
